@@ -42,7 +42,7 @@ import ManpowerReport from "../../pages/reports/pages/ManpowerReport";
 import RequirementsReport from "../../pages/reports/pages/RequirementsReport";
 import SummaryReport from "../../pages/reports/pages/SummaryReport";
 import Absent from "../../pages/Manpower/pages/Absent";
-
+import ManpowerArpa900 from "../../pages/Manpower/pages/ManpowerArpa900";
 import { useLayoutState } from "../../context/LayoutContext";
 
 function Layout(props) {
@@ -68,7 +68,9 @@ function Layout(props) {
               if (data === 'hr') {
                 return (
                   <Switch>
-                    <Route path="/dashboard" component={Dashboard} />
+                    {/* <Route path="/dashboard" component={Dashboard} /> */}
+                    <Route path="/dashboard" component={Expected} />
+                    <Route path="/manpower/expectedArpa900" component={ManpowerArpa900} />
                     <Route path="/userprofile" component={UserProfile} />
                     <Route path="/leave" component={Leave} />
                     <Route path="/contractor" component={Contractor} />
@@ -98,7 +100,8 @@ function Layout(props) {
               } else if (data === 'hod') {
                 return (
                   <Switch>
-                    <Route path="/dashboard" component={Dashboard} />
+                    {/* <Route path="/dashboard" component={Dashboard} /> */}
+                    <Route path="/dashboard" component={Expected} />
                     <Route path="/userprofile" component={UserProfile} />
                     <Route path="/leave" component={Leave} />
                     <Route path="/contractor" component={Contractor} />
@@ -124,7 +127,8 @@ function Layout(props) {
               } else if (data === 'contractor') {
                 return (
                   <Switch>
-                    <Route path="/dashboard" component={Dashboard} />
+                    {/* <Route path="/dashboard" component={Dashboard} /> */}
+                    <Route path="/dashboard" component={Expected} />
                     <Route path="/userprofile" component={UserProfile} />
                     <Route path="/leave" component={Leave} />
                     <Route path="/attendance" component={Attendance} />
@@ -141,7 +145,8 @@ function Layout(props) {
               } else {
                 return (
                   <Switch>
-                    <Route path="/dashboard" component={Dashboard} />
+                    {/* <Route path="/dashboard" component={Dashboard} /> */}
+                    <Route path="/dashboard" component={Expected} />
                     <Route path="/userprofile" component={UserProfile} />
                     <Route path="/location" component={Location} />
                     <Route path="/leave" component={Leave} />

@@ -92,9 +92,7 @@ const history = useHistory();
     setGraphicalManpowerPopup(false);
   };
 
-const handleClick=()=>{
-  history.push('/manpower/expectedArpa900')
-}
+
   const [reqs_shell_core, req_shell_core] = useState('');
   const [reqs_cold_box, req_cold_box] = useState('');
   const [reqs_arpa_900, req_arpa_900] = useState('');
@@ -213,8 +211,7 @@ const handleClick=()=>{
 
   var requirements = parseInt(reqs_shell_core) + parseInt(reqs_cold_box) + parseInt(reqs_arpa_900) + parseInt(reqs_arpa_450) + parseInt(reqs_w_b_q_3) + parseInt(reqs_hand_moulding) + parseInt(reqs_melting) + parseInt(reqs_fettling);
   const availability = parseInt(shell_core) + parseInt(cold_box) + parseInt(arpa_900) + parseInt(arpa_450) + parseInt(w_b_q_3) + parseInt(hand_moulding) + parseInt(melting) + parseInt(fettling);
-  const availabilityArpa900 =  parseInt(arpa_900);
-  console.log("217",availabilityArpa900)
+
   function refreshPage(e) {
     e.preventDefault();
     window.location.reload(false);
@@ -226,8 +223,8 @@ const handleClick=()=>{
   return (
     <div>
       <Grid container spacing={2} >
-        <Grid item xs={12} sm={4}>
-          <PageTitle title="Expected Manpower" />
+        <Grid item xs={12} sm={5}>
+          <PageTitle title="Expected Manpower Arpa 900" />
         </Grid>
         <Grid item xs={8} sm={2}>
           <FormControl required className={classes.formControl}>
@@ -260,9 +257,9 @@ const handleClick=()=>{
       <br></br>
       <Grid container spacing={2} style={{ textAlign: 'center' }}>
         <Grid item xs={12}>
-          <Widget title="Overall Manpower" >
+          <Widget title="Overall Manpower Arpa 900" >
             <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
-              Requirement : {requirements}
+              Requirement : {reqs_arpa_900}
               <LinearProgress variant="determinate" value={100} color="secondary" />
             </div>
             <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
@@ -270,24 +267,8 @@ const handleClick=()=>{
               <LinearProgress variant="determinate" value={availability / 2} color="primary" />
             </div>
             <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
-              Difference : {requirements - availability}
-              <LinearProgress variant="determinate" value={(requirements - availability) / 2 - 3} color="secondary" />
-            </div>
-          </Widget>
-        </Grid>
-        <Grid item xs={12}>
-          <Widget title="Overall Manpower Arpa 900" >
-            <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
-              Requirement : {reqs_arpa_900}
-              <LinearProgress variant="determinate" value={100} color="secondary" />
-            </div>
-            <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
-              Availability : {availabilityArpa900}
-              <LinearProgress variant="determinate" value={availabilityArpa900 / 2} color="primary" />
-            </div>
-            <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
-              Difference : {reqs_arpa_900 - availabilityArpa900}
-              <LinearProgress variant="determinate" value={(reqs_arpa_900 - availabilityArpa900) / 2 - 3} color="secondary" />
+              Difference : {reqs_arpa_900 - availability}
+              <LinearProgress variant="determinate" value={(reqs_arpa_900 - availability) / 2 - 3} color="secondary" />
             </div>
           </Widget>
         </Grid>
@@ -362,60 +343,34 @@ const handleClick=()=>{
           <div style={{ fontSize: "1.5rem", textAlign: "center", margin: 0 }}> Moulding </div>
         </Grid>
         <Grid item lg={6} md={6} sm={6} xs={12}>
-          {/* <Card style={{ backgroundColor: "#ff8129", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Arpa 900'); }}> */}
-          <Card style={{ backgroundColor: "#ff8129", color: "#ffff" }} onClick={() => { handleClick() }}>
+          <Card style={{ backgroundColor: "#ff8129", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Arpa 900'); }}>
             <CardActionArea>
+         
               <CardContent>
-                <Typography style={{ fontSize: "1.5rem" }}>
-                  Arpa 900
-                </Typography>
-                <br></br>
-                <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Requirement
-                    </Typography>
-                    <Typography size="md">{reqs_arpa_900}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Availability
-                    </Typography>
-                    <Typography size="md">{arpa_900}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Difference
-                    </Typography>
-                    <Typography size="md">{reqs_arpa_900 - arpa_900}</Typography>
-                  </Grid>
-                </Grid>
-              </CardContent>
-              {/* <CardContent>
                 <Typography style={{ fontSize: "1.5rem" }}>
                   Work Station
                 </Typography>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       Work Station
                     </Typography>
-                    <Typography size="md">DragMachineOp</Typography>
+                    <Typography size="md">Drag Machine Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Requirement
                     </Typography>
                     <Typography size="md">{reqs_DragMachineOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Availability
                     </Typography>
                     <Typography size="md">{DragMachineOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Difference
                     </Typography>
@@ -424,25 +379,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">DragMachineOpAir</Typography>
+                    <Typography size="md">Drag Machine Op Air</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_DragMachineOpAir}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{DragMachineOpAir}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -451,25 +406,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">DragMachineCoOp</Typography>
+                    <Typography size="md">Drag Machine Co Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_DragMachineCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{DragMachineCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -478,25 +433,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CopeMachineOp</Typography>
+                    <Typography size="md">Cope Machine Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CopeMachineOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CopeMachineOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -505,25 +460,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CopeMachineCoOp</Typography>
+                    <Typography size="md">Cope Machine Co Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CopeMachineCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CopeMachineCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -532,25 +487,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CopeMachineOpAir</Typography>
+                    <Typography size="md">Cope Machine Op Air</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CopeMachineOpAir}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CopeMachineOpAir}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -559,25 +514,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">DragMouldPaintingOp</Typography>
+                    <Typography size="md">Drag Mould Painting Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_DragMouldPaintingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{DragMouldPaintingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -586,25 +541,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CoreSettingOp</Typography>
+                    <Typography size="md">Core Setting Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CoreSettingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CoreSettingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -613,25 +568,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CoreTranferFixtureOp</Typography>
+                    <Typography size="md">Core Tranfer Fixture Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CoreTranferFixtureOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CoreTranferFixtureOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -640,25 +595,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">BoxClosingOp</Typography>
+                    <Typography size="md">Box Closing Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_BoxClosingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{BoxClosingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -667,25 +622,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">VentingOp</Typography>
+                    <Typography size="md">Venting Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_VentingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{VentingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -694,25 +649,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CopeBoxPreprationOp</Typography>
+                    <Typography size="md">Cope Box Prepration Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CopeBoxPreprationOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CopeBoxPreprationOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -720,13 +675,41 @@ const handleClick=()=>{
                   </Grid>
                 </Grid>
                 <br></br>
-            
+                <br></br>
+                <Grid container direction="row" justifyContent="space-between" alignItems="center" >
+                  <Grid item xs={6}>
+                    <Typography colorBrightness="secondary" noWrap>
+                      
+                    </Typography>
+                    <Typography size="md">Clamping Op</Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Typography colorBrightness="secondary" noWrap>
+                      
+                    </Typography>
+                    <Typography size="md">{reqs_ClampingOp}</Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Typography colorBrightness="secondary" noWrap>
+                      
+                    </Typography>
+                    <Typography size="md">{ClampingOp}</Typography>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Typography colorBrightness="secondary" noWrap>
+                     
+                    </Typography>
+                    <Typography size="md">{reqs_ClampingOp - ClampingOp}</Typography>
+                  </Grid>
+                </Grid>
               
-              </CardContent> */}
+             
+              
+              </CardContent>
             </CardActionArea>
           </Card>
         </Grid >
-        {/* <Grid item lg={6} md={6} sm={6} xs={12}>
+        <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card style={{ backgroundColor: "#ff8129", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Arpa 900'); }}>
             <CardActionArea>
               <CardContent>
@@ -735,79 +718,51 @@ const handleClick=()=>{
                 </Typography>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       Work Station
                     </Typography>
                     <Typography size="md"></Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Requirement
                     </Typography>
                     <Typography size="md"></Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Availability
                     </Typography>
                     <Typography size="md"></Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       Difference
                     </Typography>
                     <Typography size="md"></Typography>
                   </Grid>
                 </Grid>
-                <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">ClampingOp</Typography>
+                    <Typography size="md">Mold Box Transfer Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      
-                    </Typography>
-                    <Typography size="md">{reqs_ClampingOp}</Typography>
-                  </Grid>
-                  <Grid item xs={3}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      
-                    </Typography>
-                    <Typography size="md">{ClampingOp}</Typography>
-                  </Grid>
-                  <Grid item xs={3}>
-                    <Typography colorBrightness="secondary" noWrap>
-                     
-                    </Typography>
-                    <Typography size="md">{reqs_ClampingOp - ClampingOp}</Typography>
-                  </Grid>
-                </Grid>
-                <br></br>
-                <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      
-                    </Typography>
-                    <Typography size="md">MoldBoxTransferOp</Typography>
-                  </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_MoldBoxTransferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{MoldBoxTransferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -816,25 +771,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">Clamp&PinRemovingOp</Typography>
+                    <Typography size="md">Clamp & Pin Removing Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_ClampAndPinRemovingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{ClampAndPinRemovingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -843,25 +798,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">PouringCraneOp</Typography>
+                    <Typography size="md">Pouring Crane Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_PouringCraneOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{PouringCraneOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -870,25 +825,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">PouringOp</Typography>
+                    <Typography size="md">Pouring Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_PouringOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{PouringOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -897,25 +852,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">KOutCraneOp</Typography>
+                    <Typography size="md">K Out Crane Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_KOutCraneOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{KOutCraneOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -924,25 +879,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">KOutCraneCoOp</Typography>
+                    <Typography size="md">K Out Crane Co Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_KOutCraneCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{KOutCraneCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -951,25 +906,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">KOutOp</Typography>
+                    <Typography size="md">K Out Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_KOutOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{KOutOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -978,25 +933,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CastingTransferOp</Typography>
+                    <Typography size="md">Casting Transfer Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CastingTransferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CastingTransferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1005,25 +960,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">EmptyBoxTrasferOp</Typography>
+                    <Typography size="md">Empty Box Trasfer Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_EmptyBoxTrasferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{EmptyBoxTrasferOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1032,25 +987,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">SandPlantOp</Typography>
+                    <Typography size="md">Sand Plant Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_SandPlantOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{SandPlantOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1059,25 +1014,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">SandPlantCoOp</Typography>
+                    <Typography size="md">Sand Plant Co Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_SandPlantCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{SandPlantCoOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1086,25 +1041,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">NewSandAddOp</Typography>
+                    <Typography size="md">New Sand Add Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_NewSandAddOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{NewSandAddOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1113,25 +1068,25 @@ const handleClick=()=>{
                 </Grid>
                 <br></br>
                 <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={3}>
+                  <Grid item xs={6}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
-                    <Typography size="md">CompactibilityCheckingOp</Typography>
+                    <Typography size="md">Compactibility Checking Op</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{reqs_CompactibilityCheckingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                       
                     </Typography>
                     <Typography size="md">{CompactibilityCheckingOp}</Typography>
                   </Grid>
-                  <Grid item xs={3}>
+                  <Grid item xs={2}>
                     <Typography colorBrightness="secondary" noWrap>
                      
                     </Typography>
@@ -1143,8 +1098,8 @@ const handleClick=()=>{
               </CardContent>
             </CardActionArea>
           </Card>
-        </Grid > */}
-        <Grid item lg={6} md={6} sm={6} xs={12}>
+        </Grid >
+        {/* <Grid item lg={6} md={6} sm={6} xs={12}>
           <Card style={{ backgroundColor: "#ff8129", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Arpa 450'); }} >
             <CardActionArea>
               <CardContent>
@@ -1303,7 +1258,7 @@ const handleClick=()=>{
               </CardContent>
             </CardActionArea>
           </Card>
-        </Grid >
+        </Grid > */}
       </Grid>
       
       <div>

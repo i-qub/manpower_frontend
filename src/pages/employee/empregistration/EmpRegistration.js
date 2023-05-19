@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import dateFormat from 'dateformat';
 require('dotenv').config()
 const newURL = process.env.REACT_APP_API_URL;
-console.log("18",newURL)
+
 const useStyles = makeStyles((theme) => ({
   formControl: {
     width: '100%',
@@ -57,7 +57,7 @@ export default function EmpRegistration(props) {
   const [pf, setPF] = useState("");
   const [medicalcheckup, setMedicalCheckup] = useState("No");
 
-  const [PrimarySkill, setPrimarySkill] = useState("");
+  const [primarySkill, setprimarySkill] = useState("");
   const [primaryActivity, setprimaryActivity] = useState("");
   const [DragMachineOp, setDragMachineOp] = useState("L0");
   const [DragMachineOpAir, setDragMachineOpAir] = useState("L0");
@@ -128,7 +128,7 @@ export default function EmpRegistration(props) {
       medicalcheckup: medicalcheckup,
       education: education,
       ctc: ctc,
-      PrimarySkill: PrimarySkill,
+      primarySkill: primarySkill,
       primaryActivity:primaryActivity,
       DragMachineOp:DragMachineOp,
       DragMachineOpAir:DragMachineOpAir,
@@ -415,9 +415,11 @@ export default function EmpRegistration(props) {
                     style={{ width: '100%' }}
                   >
                     <option aria-label="None" value="" />
-                    <option value="HR">HR</option>
+                    <option value="Arpa 900">Arpa 900</option>
+                    <option value="Arpa 450">Arpa 450</option>
+                    <option value="W_B_Q_3">W B Q 3</option>
                     <option value="Core Shop">Core Shop</option>
-                    <option value="Moulding">Moulding</option>
+                    <option value="Hand Moulding">Hand Moulding</option>
                     <option value="Melting">Melting</option>
                     <option value="Fettling">Fettling</option>
                   </Select>
@@ -513,7 +515,7 @@ export default function EmpRegistration(props) {
                   <InputLabel htmlFor="age-native-required" required className={classes.formControl}>Primary Skill</InputLabel>
                   <Select
                     native
-                    onChange={(event) => { setPrimarySkill(event.target.value); }}
+                    onChange={(event) => { setprimarySkill(event.target.value); }}
                     style={{ width: '100%' }}
                   >
                     <option aria-label="None" value="" />
@@ -1130,7 +1132,7 @@ export default function EmpRegistration(props) {
                   <InputLabel htmlFor="age-native-required" required className={classes.formControl}>Primary Skill</InputLabel>
                   <Select
                     native
-                    onChange={(event) => { setPrimarySkill(event.target.value); }}
+                    onChange={(event) => { setprimarySkill(event.target.value); }}
                     style={{ width: '100%' }}
                   >
                     <option aria-label="None" value="" />
