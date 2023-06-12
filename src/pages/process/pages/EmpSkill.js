@@ -11,7 +11,7 @@ import ViewDetails from './ViewDetails';
 import ViewSkillDetails from './ViewSkillDetails';
 require('dotenv').config()
 const newURL = process.env.REACT_APP_API_URL;
-console.log("18",newURL)
+
 
 const theme = createTheme({
     overrides: {

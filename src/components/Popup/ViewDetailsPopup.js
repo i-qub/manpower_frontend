@@ -13,7 +13,7 @@ export default function ViewDetailsPopup(props) {
         <Dialog open={openDetailsPopup} maxWidth="md">
             <DialogTitle>
                 <div style={{ display: 'flex' }}>
-                    <div style={{ flexGrow: 1, fontWeight: 'bold', paddingTop: '5px' }}>Employee Details</div>
+                    <div style={{ flexGrow: 1, fontWeight: 'bold', paddingTop: '5px' }}>Employee Details 1</div>
                     <Button onClick={Print}>
                         PRINT
                     </Button>

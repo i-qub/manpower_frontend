@@ -579,7 +579,6 @@ export default function EmpRegistration(props) {
                   </Select>
                 </FormControl>
               </Grid>
-
               <Grid item xs={12} sm={4}>
                 <FormControl  className={classes.formControl}>
                   <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Cope Machine Op</InputLabel>

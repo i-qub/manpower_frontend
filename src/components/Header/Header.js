@@ -96,7 +96,7 @@ export default function Header(props) {
         <img src={logo} alt="logo" className={classes.logotypeImage} style={{ height: "40px" }} />
 
         <Typography variant="h6" weight="medium" className={classes.logotype}>
-          Menon & Menon Ltd.
+          menon and menon ltd.
         </Typography>
         <div className={classes.grow} />
         <IconButton

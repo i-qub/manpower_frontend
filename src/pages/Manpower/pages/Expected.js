@@ -259,7 +259,7 @@ const handleClick=()=>{
       </Grid>
       <br></br>
       <Grid container spacing={2} style={{ textAlign: 'center' }}>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Widget title="Overall Manpower" >
             <div style={{ fontSize: "1.3rem", textAlign: 'left', padding: "5px", fontFamily: "Times New Roman" }}>
               Requirement : {requirements}
@@ -290,74 +290,8 @@ const handleClick=()=>{
               <LinearProgress variant="determinate" value={(reqs_arpa_900 - availabilityArpa900) / 2 - 3} color="secondary" />
             </div>
           </Widget>
-        </Grid>
-        {/* <Grid item xs={12}>
-          <div style={{ fontSize: "1.5rem", textAlign: "center", margin: 0 }}> Core Shop </div>
-        </Grid>
-        <Grid item lg={6} md={6} sm={6} xs={12}>
-          <Card style={{ backgroundColor: "#405bf6", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Shell Core'); }}>
-            <CardActionArea>
-              <CardContent>
-                <Typography style={{ fontSize: "1.5rem" }}>
-                  Shell Core
-                </Typography>
-                <br></br>
-                <Grid container direction="row" justifyContent="space-between" alignItems="center" >
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Requirement
-                    </Typography>
-                    <Typography size="md">{reqs_shell_core}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Availability
-                    </Typography>
-                    <Typography size="md">{shell_core}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Difference
-                    </Typography>
-                    <Typography size="md">{reqs_shell_core - shell_core}</Typography>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid >
-        <Grid item lg={6} md={6} sm={6} xs={12}>
-          <Card style={{ backgroundColor: "#405bf6", color: "#ffff" }} onClick={() => { handleClickOpen(); setSubDept('Cold Box'); }} >
-            <CardActionArea>
-              <CardContent>
-                <Typography style={{ fontSize: "1.5rem" }}>
-                  Cold Box
-                </Typography>
-                <br></br>
-                <Grid container direction="row" justifyContent="space-between" alignItems="center">
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Requirement
-                    </Typography>
-                    <Typography size="md">{reqs_cold_box}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Availability
-                    </Typography>
-                    <Typography size="md">{cold_box}</Typography>
-                  </Grid>
-                  <Grid item xs={4}>
-                    <Typography colorBrightness="secondary" noWrap>
-                      Difference
-                    </Typography>
-                    <Typography size="md">{reqs_cold_box - cold_box}</Typography>
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Grid > */}
+        </Grid> */}
+       
         <Grid item xs={12}>
           <div style={{ fontSize: "1.5rem", textAlign: "center", margin: 0 }}> Moulding </div>
         </Grid>

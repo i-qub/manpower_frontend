@@ -22,7 +22,7 @@ import logo from "./logo.png";
 import logo1 from "./logo1.png";
 require('dotenv').config()
 const newURL = process.env.REACT_APP_API_URL;
-console.log("18",newURL)
+
 
 function Login(props) {
   var classes = useStyles();
@@ -40,7 +40,7 @@ function Login(props) {
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
   const [error, setError] = useState(null);
   require('dotenv').config();
-  console.log("40",process.env.URL)
+
   // handle button click of login form
   const login = () => {
     setError(null);
@@ -62,7 +62,7 @@ function Login(props) {
     <Grid container className={classes.container}>
       <div className={classes.logotypeContainer}>
         <img src={logo} alt="logo" className={classes.logotypeImage} />
-        <Typography className={classes.logotypeText} style={{ fontFamily: "Times new Roman", fontSize: "5rem" }}>Menon & Menon Ltd.</Typography>
+        <Typography className={classes.logotypeText} style={{ fontFamily: "Times new Roman", fontSize: "5rem" }}>menon and menon ltd.</Typography>
       </div>
       <div className={classes.formContainer}>
         <div className={classes.form}>

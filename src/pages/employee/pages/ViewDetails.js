@@ -13,7 +13,7 @@ import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
 require('dotenv').config()
 const newURL = process.env.REACT_APP_API_URL;
-console.log("18",newURL)
+
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -65,6 +65,36 @@ export default function ViewDetails(props) {
             setPan(response.data[0].pan);
             setESI(response.data[0].esi);
             setPF(response.data[0].pf);
+
+            setprimarySkill(response.data[0].primarySkill);
+            setprimaryActivity(response.data[0].primaryActivity);
+            setDragMachineOp(response.data[0].DragMachineOp);
+            setDragMachineOpAir(response.data[0].DragMachineOpAir);
+            setDragMachineCoOp(response.data[0].DragMachineCoOp);
+            setCopeMachineOp(response.data[0].CopeMachineOp);
+            setCopeMachineCoOp(response.data[0].CopeMachineCoOp);
+            setCopeMachineOpAir(response.data[0].CopeMachineOpAir);
+            setDragMouldPaintingOp(response.data[0].DragMouldPaintingOp);
+            setCoreSettingOp(response.data[0].CoreSettingOp);
+            setCoreTranferFixtureOp(response.data[0].CoreTranferFixtureOp);
+            setBoxClosingOp(response.data[0].BoxClosingOp);
+            setVentingOp(response.data[0].VentingOp);
+            setCopeBoxPreprationOp(response.data[0].CopeBoxPreprationOp);
+            setClampingOp(response.data[0].ClampingOp);
+            setMoldBoxTransferOp(response.data[0].MoldBoxTransferOp);
+            setClampAndPinRemovingOp(response.data[0].ClampAndPinRemovingOp);
+            setPouringCraneOp(response.data[0].PouringCraneOp);
+            setPouringOp(response.data[0].PouringOp);
+            setKOutCraneOp(response.data[0].KOutCraneOp);
+            setKOutCraneCoOp(response.data[0].KOutCraneCoOp);
+            setKOutOp(response.data[0].KOutOp);
+            setCastingTransferOp(response.data[0].CastingTransferOp);
+            setEmptyBoxTrasferOp(response.data[0].EmptyBoxTrasferOp);
+            setSandPlantOp(response.data[0].SandPlantOp);
+            setSandPlantCoOp(response.data[0].SandPlantCoOp);
+            setNewSandAddOp(response.data[0].NewSandAddOp);
+            setCompactibilityCheckingOp(response.data[0].CompactibilityCheckingOp);
+
         });
     }, [props]);
 
@@ -98,6 +128,34 @@ export default function ViewDetails(props) {
     const [pan, setPan] = useState("");
     const [esi, setESI] = useState("");
     const [pf, setPF] = useState("");
+    const [primarySkill, setprimarySkill] = useState("");
+    const [primaryActivity, setprimaryActivity] = useState("");
+    const [DragMachineOp, setDragMachineOp] = useState("L0");
+    const [DragMachineOpAir, setDragMachineOpAir] = useState("L0");
+    const [DragMachineCoOp, setDragMachineCoOp] = useState("L0");
+    const [CopeMachineOp, setCopeMachineOp] = useState("L0");
+    const [CopeMachineCoOp, setCopeMachineCoOp] = useState("L0");
+    const [CopeMachineOpAir, setCopeMachineOpAir] = useState("L0");
+    const [DragMouldPaintingOp, setDragMouldPaintingOp] = useState("L0");
+    const [CoreSettingOp, setCoreSettingOp] = useState("L0");
+    const [CoreTranferFixtureOp, setCoreTranferFixtureOp] = useState("L0");
+    const [BoxClosingOp, setBoxClosingOp] = useState("L0");
+    const [VentingOp, setVentingOp] = useState("L0");
+    const [CopeBoxPreprationOp, setCopeBoxPreprationOp] = useState("L0");
+    const [ClampingOp, setClampingOp] = useState("L0");
+    const [MoldBoxTransferOp, setMoldBoxTransferOp] = useState("L0");
+    const [ClampAndPinRemovingOp, setClampAndPinRemovingOp] = useState("L0");
+    const [PouringCraneOp, setPouringCraneOp] = useState("L0");
+    const [PouringOp, setPouringOp] = useState("L0");
+    const [KOutCraneOp, setKOutCraneOp] = useState("L0");
+    const [KOutCraneCoOp, setKOutCraneCoOp] = useState("L0");
+    const [KOutOp, setKOutOp] = useState("L0");
+    const [CastingTransferOp, setCastingTransferOp] = useState("L0");
+    const [EmptyBoxTrasferOp, setEmptyBoxTrasferOp] = useState("L0");
+    const [SandPlantOp, setSandPlantOp] = useState("L0");
+    const [SandPlantCoOp, setSandPlantCoOp] = useState("L0");
+    const [NewSandAddOp, setNewSandAddOp] = useState("L0");
+    const [CompactibilityCheckingOp, setCompactibilityCheckingOp] = useState("L0");
 
     const [open, setOpen] = useState(false);
 
@@ -155,10 +213,106 @@ export default function ViewDetails(props) {
                 pan: pan,
                 esi: esi,
                 pf: pf,
+                primarySkill: primarySkill,
+                primaryActivity:primaryActivity,
+                DragMachineOp:DragMachineOp,
+                DragMachineOpAir:DragMachineOpAir,
+                DragMachineCoOp:DragMachineCoOp,
+                CopeMachineOp:CopeMachineOp,
+                CopeMachineCoOp:CopeMachineCoOp,
+                CopeMachineOpAir:CopeMachineOpAir,
+                DragMouldPaintingOp:DragMouldPaintingOp,
+                CoreSettingOp:CoreSettingOp,
+                CoreTranferFixtureOp:CoreTranferFixtureOp,
+                BoxClosingOp:BoxClosingOp,
+                VentingOp:VentingOp,
+                CopeBoxPreprationOp:CopeBoxPreprationOp,
+                ClampingOp:ClampingOp,
+                MoldBoxTransferOp:MoldBoxTransferOp,
+                ClampAndPinRemovingOp:ClampAndPinRemovingOp,
+                PouringCraneOp:PouringCraneOp,
+                PouringOp:PouringOp,
+                KOutCraneOp:KOutCraneOp,
+                KOutCraneCoOp:KOutCraneCoOp,
+                KOutOp:KOutOp,
+                CastingTransferOp:CastingTransferOp,
+                EmptyBoxTrasferOp:EmptyBoxTrasferOp,
+                SandPlantOp:SandPlantOp,
+                SandPlantCoOp:SandPlantCoOp,
+                NewSandAddOp:NewSandAddOp,
+                CompactibilityCheckingOp:CompactibilityCheckingOp,
+                subdept:subdept
             },
                 onSubmitClose());
             window.location.reload();
         }
+    };
+
+    const updateEmployee = (event) => {
+        // event.preventDefault();
+            axios.post(newURL+"/emp/updateEmployee", {
+                token: token,
+                name: name,
+                dob: dob,
+                dobplace: dobplace,
+                age: age,
+                gender: gender,
+                maritalstatus: maritalstatus,
+                address: address,
+                paddress: paddress,
+                city: city,
+                state: state,
+                zipcode: zipcode,
+                country: country,
+                email: email,
+                mobile1: mobile1,
+                mobile2: mobile2,
+                contractor: contractor,
+                dept: dept,
+                joindate: joindate,
+                enddate: enddate,
+                role: role,
+                type: type,
+                medicalcheckup: medicalcheckup,
+                education: education,
+                ctc: ctc,
+                aadhar: aadhar,
+                pan: pan,
+                esi: esi,
+                pf: pf,
+                primarySkill: primarySkill,
+                primaryActivity:primaryActivity,
+                DragMachineOp:DragMachineOp,
+                DragMachineOpAir:DragMachineOpAir,
+                DragMachineCoOp:DragMachineCoOp,
+                CopeMachineOp:CopeMachineOp,
+                CopeMachineCoOp:CopeMachineCoOp,
+                CopeMachineOpAir:CopeMachineOpAir,
+                DragMouldPaintingOp:DragMouldPaintingOp,
+                CoreSettingOp:CoreSettingOp,
+                CoreTranferFixtureOp:CoreTranferFixtureOp,
+                BoxClosingOp:BoxClosingOp,
+                VentingOp:VentingOp,
+                CopeBoxPreprationOp:CopeBoxPreprationOp,
+                ClampingOp:ClampingOp,
+                MoldBoxTransferOp:MoldBoxTransferOp,
+                ClampAndPinRemovingOp:ClampAndPinRemovingOp,
+                PouringCraneOp:PouringCraneOp,
+                PouringOp:PouringOp,
+                KOutCraneOp:KOutCraneOp,
+                KOutCraneCoOp:KOutCraneCoOp,
+                KOutOp:KOutOp,
+                CastingTransferOp:CastingTransferOp,
+                EmptyBoxTrasferOp:EmptyBoxTrasferOp,
+                SandPlantOp:SandPlantOp,
+                SandPlantCoOp:SandPlantCoOp,
+                NewSandAddOp:NewSandAddOp,
+                CompactibilityCheckingOp:CompactibilityCheckingOp,
+                subdept:subdept
+            },
+                onSubmitClose());
+            window.location.reload();
+        
     };
 
     if (!token) {
@@ -420,7 +574,7 @@ export default function ViewDetails(props) {
                                 style={{ width: '100%' }}
                                 value={dept}
                             >
-                                <option aria-label="None" value="" />
+                               <option aria-label="None" value="" />
                                 <option value="Core Shop">Core Shop</option>
                                 <option value="Moulding">Moulding</option>
                                 <option value="Melting">Melting</option>
@@ -429,6 +583,7 @@ export default function ViewDetails(props) {
                             </Select>
                         </FormControl>
                     </Grid>
+               
                     {(() => {
                         if (verified === 'YES') {
                             return (
@@ -497,6 +652,535 @@ export default function ViewDetails(props) {
                                 <option value="employee">Employee</option>
                             </Select>
                         </FormControl>
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                <FormControl required className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required" required className={classes.formControl}>Primary Activity</InputLabel>
+                  <Select
+                    native
+                    value={primaryActivity}
+                    onChange={(event) => { setprimaryActivity(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="DragMachineOp">Drag Machine Op</option>
+                    <option value="DragMachineOpAir">Drag Machine Op Air</option>
+                    <option value="DragMachineCoOp">Drag Machine Co Op</option>
+                    <option value="CopeMachineOp">Cope Machine Op</option>
+                    <option value="CopeMachineCoOp">Cope Machine Co Op</option>
+                    <option value="CopeMachineOpAir">Cope Machine Op Air</option>
+                    <option value="DragMouldPaintingOp">Drag Mould Painting Op</option>
+                    <option value="CoreSettingOp">Core Setting Op</option>
+                    <option value="CoreTranferFixtureOp">Core Tranfer Fixture Op</option>
+                    <option value="BoxClosingOp">Box Closing Op</option>
+                    <option value="VentingOp">Venting Op</option>
+                    <option value="CopeBoxPreprationOp">Cope Box Prepration Op</option>
+                    <option value="ClampingOp">Clamping Op</option>
+                    <option value="MoldBoxTransferOp">Mold Box Transfer Op</option>
+                    <option value="ClampAndPinRemovingOp">Clamp And Pin Removing Op</option>
+                    <option value="PouringCraneOp">Pouring Crane Op</option>
+                    <option value="PouringOp">Pouring Op</option>
+                    <option value="KOutCraneOp">K Out Crane Op</option>
+                    <option value="KOutCraneCoOp">K Out Crane Co Op</option>
+                    <option value="KOutOp">K Out Op</option>
+                    <option value="CastingTransferOp">Casting Transfer Op</option>
+                    <option value="EmptyBoxTrasferOp">Empty Box Trasfer Op</option>
+                    <option value="SandPlantOp">Sand Plant Op</option>
+                    <option value="SandPlantCoOp">Sand Plant Co Op</option>
+                    <option value="NewSandAddOp">New Sand Add Op</option>
+                    <option value="CompactibilityCheckingOp">Compactibility Checking Op</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl required className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required" required className={classes.formControl}>Primary Skill</InputLabel>
+                  <Select
+                    native
+                    value={primarySkill}
+                    onChange={(event) => { setprimarySkill(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Drag Machine Op</InputLabel>
+                  <Select
+                    native
+                    value={DragMachineOp}
+                    onChange={(event) => { setDragMachineOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Drag Machine Op Air</InputLabel>
+                  <Select
+                    native
+                    value={DragMachineOpAir}
+                    onChange={(event) => { setDragMachineOpAir(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Drag Machine Co Op</InputLabel>
+                  <Select
+                    native
+                    value={DragMachineCoOp}
+                    onChange={(event) => { setDragMachineCoOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Cope Machine Op</InputLabel>
+                  <Select
+                    native
+                    value={CopeMachineOp}
+                    onChange={(event) => { setCopeMachineOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Cope Machine Co Op</InputLabel>
+                  <Select
+                    native
+                    value={CopeMachineCoOp}
+                    onChange={(event) => { setCopeMachineCoOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Cope Machine Op Air</InputLabel>
+                  <Select
+                    native
+                    value={CopeMachineOpAir}
+                    onChange={(event) => { setCopeMachineOpAir(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Drag Mould Painting Op</InputLabel>
+                  <Select
+                    native
+                    value={DragMouldPaintingOp}
+                    onChange={(event) => { setDragMouldPaintingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Core Setting Op</InputLabel>
+                  <Select
+                    native
+                    value={CoreSettingOp}
+                    onChange={(event) => { setCoreSettingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Core Tranfer Fixture Op</InputLabel>
+                  <Select
+                    native
+                    value={CoreTranferFixtureOp}
+                    onChange={(event) => { setCoreTranferFixtureOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Box Closing Op</InputLabel>
+                  <Select
+                    native
+                    value={BoxClosingOp}
+                    onChange={(event) => { setBoxClosingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Venting Op</InputLabel>
+                  <Select
+                    native
+                    value={VentingOp}
+                    onChange={(event) => { setVentingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Cope Box Prepration Op</InputLabel>
+                  <Select
+                    native
+                    value={CopeBoxPreprationOp}
+                    onChange={(event) => { setCopeBoxPreprationOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Clamping Op</InputLabel>
+                  <Select
+                    native
+                    value={ClampingOp}
+                    onChange={(event) => { setClampingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Mold Box Transfer Op</InputLabel>
+                  <Select
+                    native
+                    value={MoldBoxTransferOp}
+                    onChange={(event) => { setMoldBoxTransferOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Clamp And Pin Removing Op</InputLabel>
+                  <Select
+                    native
+                    value={ClampAndPinRemovingOp}
+                    onChange={(event) => { setClampAndPinRemovingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Pouring Crane Op</InputLabel>
+                  <Select
+                    native
+                    value={PouringCraneOp}
+                    onChange={(event) => { setPouringCraneOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Pouring Op</InputLabel>
+                  <Select
+                    native
+                    value={PouringOp}
+                    onChange={(event) => { setPouringOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>K Out Crane Op</InputLabel>
+                  <Select
+                    native
+                    value={KOutCraneOp}
+                    onChange={(event) => { setKOutCraneOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>K Out Crane Co Op</InputLabel>
+                  <Select
+                    native
+                    value={KOutCraneCoOp}
+                    onChange={(event) => { setKOutCraneCoOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>K Out Op</InputLabel>
+                  <Select
+                    native
+                    value={KOutOp}
+                    onChange={(event) => { setKOutOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Casting Transfer Op</InputLabel>
+                  <Select
+                    native
+                    value={CastingTransferOp}
+                    onChange={(event) => { setCastingTransferOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Empty Box Trasfer Op</InputLabel>
+                  <Select
+                    native
+                    value={EmptyBoxTrasferOp}
+                    onChange={(event) => { setEmptyBoxTrasferOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Sand Plant Op</InputLabel>
+                  <Select
+                    native
+                    value={SandPlantOp}
+                    onChange={(event) => { setSandPlantOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required" className={classes.formControl}>Sand Plant Co Op</InputLabel>
+                  <Select
+                    native
+                    value={SandPlantCoOp}
+                    onChange={(event) => { setSandPlantCoOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>New Sand Add Op</InputLabel>
+                  <Select
+                    native
+                    value={NewSandAddOp}
+                    onChange={(event) => { setNewSandAddOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                <FormControl  className={classes.formControl}>
+                  <InputLabel htmlFor="age-native-required"  className={classes.formControl}>Compactibility Checking Op</InputLabel>
+                  <Select
+                    native
+                    value={CompactibilityCheckingOp}
+                    onChange={(event) => { setCompactibilityCheckingOp(event.target.value); }}
+                    style={{ width: '100%' }}
+                  >
+                    <option aria-label="None" value="" />
+                    <option value="L0">L0</option>
+                    <option value="L1">L1</option>
+                    <option value="L2">L2</option>
+                    <option value="L3">L3</option>
+                    <option value="L4">L4</option>
+                  </Select>
+                </FormControl>
+              </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <Button variant="contained" style={{backgroundColor: "orange",marginLeft: "70px",marginTop: "15px"}} onClick={updateEmployee}>UPDATE</Button>
                     </Grid>
                     {(() => {
                         if (verified === 'NO') {

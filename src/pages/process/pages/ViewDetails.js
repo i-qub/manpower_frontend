@@ -62,6 +62,34 @@ export default function ViewDetails(props) {
             setPan(response.data[0].pan);
             setESI(response.data[0].esi);
             setPF(response.data[0].pf);
+
+            setDragMachineOp(response.data[0].DragMachineOp);
+            setDragMachineOpAir(response.data[0].DragMachineOpAir);
+            setDragMachineCoOp(response.data[0].DragMachineCoOp);
+            setCopeMachineOp(response.data[0].CopeMachineOp);
+            setCopeMachineCoOp(response.data[0].CopeMachineCoOp);
+            setCopeMachineOpAir(response.data[0].CopeMachineOpAir);
+            setDragMouldPaintingOp(response.data[0].DragMouldPaintingOp);
+            setCoreSettingOp(response.data[0].CoreSettingOp);
+            setCoreTranferFixtureOp(response.data[0].CoreTranferFixtureOp);
+            setBoxClosingOp(response.data[0].BoxClosingOp);
+            setVentingOp(response.data[0].VentingOp);
+            setCopeBoxPreprationOp(response.data[0].CopeBoxPreprationOp);
+            setClampingOp(response.data[0].ClampingOp);
+            setMoldBoxTransferOp(response.data[0].MoldBoxTransferOp);
+            setClampAndPinRemovingOp(response.data[0].ClampAndPinRemovingOp);
+            setPouringCraneOp(response.data[0].PouringCraneOp);
+            setPouringOp(response.data[0].PouringOp);
+            setKOutCraneOp(response.data[0].KOutCraneOp);
+            setKOutCraneCoOp(response.data[0].KOutCraneCoOp);
+            setKOutOp(response.data[0].KOutOp);
+            setCastingTransferOp(response.data[0].CastingTransferOp);
+            setEmptyBoxTrasferOp(response.data[0].EmptyBoxTrasferOp);
+            setSandPlantOp(response.data[0].SandPlantOp);
+            setSandPlantCoOp(response.data[0].SandPlantCoOp);
+            setNewSandAddOp(response.data[0].NewSandAddOp);
+            setCompactibilityCheckingOp(response.data[0].CompactibilityCheckingOp);
+            
         });
     }, [props]);
 
@@ -95,6 +123,33 @@ export default function ViewDetails(props) {
     const [pan, setPan] = useState("");
     const [esi, setESI] = useState("");
     const [pf, setPF] = useState("");
+
+    const [DragMachineOp, setDragMachineOp] = useState("");
+    const [DragMachineOpAir, setDragMachineOpAir] = useState("");
+    const [DragMachineCoOp, setDragMachineCoOp] = useState("");
+    const [CopeMachineOp, setCopeMachineOp] = useState("");
+    const [CopeMachineCoOp, setCopeMachineCoOp] = useState("");
+    const [CopeMachineOpAir, setCopeMachineOpAir] = useState("");
+    const [DragMouldPaintingOp, setDragMouldPaintingOp] = useState("");
+    const [CoreSettingOp, setCoreSettingOp] = useState("");
+    const [CoreTranferFixtureOp, setCoreTranferFixtureOp] = useState("");
+    const [BoxClosingOp, setBoxClosingOp] = useState("");
+    const [VentingOp, setVentingOp] = useState("");
+    const [CopeBoxPreprationOp, setCopeBoxPreprationOp] = useState("");
+    const [ClampingOp, setClampingOp] = useState("");
+    const [MoldBoxTransferOp, setMoldBoxTransferOp] = useState("");
+    const [ClampAndPinRemovingOp, setClampAndPinRemovingOp] = useState("");
+    const [PouringCraneOp, setPouringCraneOp] = useState("");
+    const [PouringOp, setPouringOp] = useState("");
+    const [KOutCraneOp, setKOutCraneOp] = useState("");
+    const [KOutCraneCoOp, setKOutCraneCoOp] = useState("");
+    const [KOutOp, setKOutOp] = useState("");
+    const [CastingTransferOp, setCastingTransferOp] = useState("");
+    const [EmptyBoxTrasferOp, setEmptyBoxTrasferOp] = useState("");
+    const [SandPlantOp, setSandPlantOp] = useState("");
+    const [SandPlantCoOp, setSandPlantCoOp] = useState("");
+    const [NewSandAddOp, setNewSandAddOp] = useState("");
+    const [CompactibilityCheckingOp, setCompactibilityCheckingOp] = useState("");
 
     const updateEmployee = (event) => {
         event.preventDefault();
@@ -469,6 +524,7 @@ export default function ViewDetails(props) {
                                         </Select>
                                     </FormControl>
                                 </Grid>
+                                
                             )
                         } else if (dept === 'Melting') {
                             return (
